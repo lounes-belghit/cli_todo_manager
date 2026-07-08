@@ -1,7 +1,8 @@
+use serde::{Deserialize, Serialize};
 use std::fmt;
 
 //use crate::todoitem::Status::{Don, WorkingOn};
-#[derive(Debug, Clone, Copy, PartialEq)]
+#[derive(Serialize, Deserialize, Debug, Clone, Copy, PartialEq)]
 //use text_io::read;
 enum Status {
     Waiting,
@@ -18,6 +19,7 @@ impl fmt::Display for Status {
     }
 }
 //#[derive(Debug, Clone, Copy, PartialEq)]
+#[derive(Serialize, Deserialize, Debug)]
 pub struct Item {
     id: i32,
     name: String,

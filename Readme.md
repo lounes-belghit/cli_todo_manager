@@ -15,11 +15,10 @@
     --working on
     --don
 # the librerys needed for are
-    --std:for input and output 
-    --
+    --std:for input and output  we had use to text_io for the read function it's aoutumated instate of using the defult one with parecer use  cargo add text_io to add it 
+    --we use serde to manupulate the jison files so you can add them by using this command on your terminal: cargo add serde --features derive && cargo add serde_json
 # notes:
     --as first attemd we will start with simple list [*]
-    -- then we will work on text file []
-    --json file []
+    --json file [*]
     --data base[]
     --make it as api for a web app[]

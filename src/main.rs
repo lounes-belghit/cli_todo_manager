@@ -1,13 +1,15 @@
+mod jsonfn;
 mod todoitem;
 mod utilefn;
-
 use text_io::read;
 //use todoitem::Item;
+//use jsonfn::*;
 use todoitem::*;
 //use utilefn::*;
 
 fn main() {
-    let mut todolist: Vec<Item> = vec![];
+    //let mut todolist: Vec<Item> = vec![];
+    let mut todolist: Vec<Item> = jsonfn::read_json("list.json");
     //main menu :
     loop {
         print!(
@@ -24,5 +26,10 @@ fn main() {
         }
         print!("\n");
         //utilefn::show_items(&todolist, true);
+    }
+    if jsonfn::write_json("list.json", &todolist) {
+        println!("the json file was updated with sucess !!");
+    } else {
+        println!("there was a erore with updating the json file please chek if it is ok !!");
     }
 }

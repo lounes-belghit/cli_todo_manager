@@ -11,9 +11,10 @@ use todoitem::*;
 fn main() {
     //let mut todolist: Vec<Item> = vec![];
     let mut todolist: Vec<Item> = jsonfn::read_json("list.json");
-    let conn = sqlitefn::connect_db("sqttest.db3");
-    let item:Item = Item::new(2,"try3".to_string(),"try4".to_string())
-    sqlitefn::add_task(item,conn);
+    let conn = sqlitefn::connect_db("sqttest.db3").expect("erore  connextion !!");
+    let item: Item = Item::new(2, "try3".to_string(), "try4".to_string());
+    let add_status = sqlitefn::add_task(&item, conn);
+    println!("the itemm aded with status {:?}", add_status);
     //main menu :
     loop {
         print!(

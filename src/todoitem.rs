@@ -1,5 +1,5 @@
 use serde::{Deserialize, Serialize};
-use std::fmt;
+use std::fmt::{self, Display};
 
 //use crate::todoitem::Status::{Don, WorkingOn};
 #[derive(Serialize, Deserialize, Debug, Clone, Copy, PartialEq)]
@@ -52,6 +52,15 @@ impl Item {
             Status::Waiting => self.status = Status::WorkingOn,
             Status::WorkingOn => self.status = Status::Don,
             _ => self.status = Status::Don,
+        }
+    }
+    pub fn get_item_info(&self, needed_info: u8) -> String {
+        match needed_info {
+            1 => return self.id.to_string(),
+            2 => return self.name.clone(),
+            3 => return self.descreption.clone(),
+            4 => return self.status.to_string(),
+            _ => return String::from("wrone chois"),
         }
     }
 }

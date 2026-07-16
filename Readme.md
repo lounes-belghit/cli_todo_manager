@@ -1,10 +1,10 @@
-# the project is a todo list with json save file the basic functions are
-   --show the todo list[*]
-   --show the status of the todo items[*]
-   --add item[*]
-   --change a status of item[*]
-   --delete item[*]
-   --show more info about item[*]
+# the project is a todo list with json save file the basic functions are:
+    --show the todo list [*]
+    --show the status of the todo items [*]
+    --add item [*]
+    --change a status of item [*]
+    --delete item [*]
+    --show more info about item [*]
 # the item is a struct :
     --id
     --name
@@ -22,3 +22,19 @@
     --json file [*]
     --data base[]
     --make it as api for a web app[]
+# for the data base part we will use a sqlite:
+    **as first idea we will start with one table then w may make other tables for users of colective work **
+    --create the archetecture of db (relations ,tables,workflow ) we will use drawdb to make it easier []
+    -- work on add function []
+  ## notes:
+      --we will use the rusqlite layberry for the single thread process 
+      --after that for the http server we need to use a multi thread layberry to handel the parallel requisets 
+  ## sqlite fn that we will implement for now :
+        -- create db fn[*]
+        -- add task fn  []
+        -- delete task fn[] 
+        -- update status []
+        -- get task []
+        -- get all taskes []
+        -- delete all tasks [] 
+        -- search for task []
